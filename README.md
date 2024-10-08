@@ -1,10 +1,14 @@
 1. Proses Registrasi dan Login
+   
    Registrasi
+   
   •	Pengguna mengisi formulir registrasi yang terdiri dari nama, email, dan password. Formulir ini menggunakan widget TextFormField untuk masing-masing input, dengan validasi       untuk memastikan data yang diinput sesuai.
+  
   •	Setelah pengguna menekan tombol registrasi, input akan divalidasi terlebih dahulu.
 
     Mengirim Data Registrasi ke API:
    • Setelah input valid, data (nama, email, password) dikirim ke server melalui REST API.
+   
    •	Fungsi _submit() mengumpulkan data dari form dan menggunakan RegistrasiBloc.registrasi() untuk mengirim permintaan HTTP POST ke endpoint API yang sesuai.
 
 ```
@@ -19,7 +23,9 @@ password: _passwordTextboxController.text
 });
 ```
 Respons dari Server:
+
 •	Jika registrasi berhasil, server akan mengirim respons sukses, dan aplikasi akan menampilkan dialog sukses. Pengguna akan diarahkan untuk login setelah itu.
+
 •	Jika terjadi kesalahan, seperti email yang sudah terdaftar, dialog peringatan akan muncul.
 ```
 showDialog(
@@ -31,6 +37,7 @@ description: "Registrasi berhasil, silahkan login"
 );
 ```
 Penyelesaian:
+
 Setelah registrasi berhasil atau gagal, status loading dihentikan, dan aplikasi kembali ke keadaan normal.
 ```
 setState(() {
@@ -106,6 +113,7 @@ berhasil login:
 2. Proses tambah data produk
 
 Form Input Data Produk
+
 Menggunakan form dengan input untuk kode_produk, nama_produk, dan harga_produk.
 ```
 Widget _formProduk() {
@@ -120,6 +128,7 @@ TextFormField(decoration: InputDecoration(labelText: "Harga Produk"), controller
 
 ```
 Menampilkan Daftar Produk
+
 Data produk diambil menggunakan ProdukBloc.getProduks(), yang mengirim permintaan GET ke endpoint /produk.
 
 ```
@@ -146,6 +155,7 @@ setelah berhasil tambah produk:
 
 3. Proses Tampil Data
 Menampilkan Detail Produk
+
 Ketika produk diklik, detail produk ditampilkan. Data ini diambil dari 
 
 ```
@@ -165,8 +175,12 @@ body: Column(children: [Text("Harga: ${produk.hargaProduk}")])
 ```
 
 Proses Edit 
+
 Edit Produk
-Data produk diedit melalui form yang sama dengan tambah produk. Setelah form disimpan, data dikirim menggunakan method ProdukBloc.updateProduk.
+
+Data produk diedit melalui form yang sama dengan tambah produk.
+
+Setelah form disimpan, data dikirim menggunakan method ProdukBloc.updateProduk.
 
 ```
 ProdukBloc.updateProduk(produk: Produk(
@@ -205,7 +219,9 @@ pop up hapus:
 ![pop up hapus](https://github.com/user-attachments/assets/ac9211bf-9a5d-4ca4-8166-de81b0aaefbf)
 
 logout
+
 Proses Logout
+
 Menghapus token dari penyimpanan lokal menggunakan SharedPreferences untuk mengakhiri sesi pengguna dan mencegah akses tidak sah. Contoh fungsi logout:
 ```
 Future<void> logout() async {
