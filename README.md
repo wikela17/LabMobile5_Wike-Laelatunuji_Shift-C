@@ -189,7 +189,8 @@ detail:
 ![detail produk](https://github.com/user-attachments/assets/101a6f09-e8ef-4a33-94f1-e0854343ddf6)
 
 edit:
-![edit produk](https://github.com/user-attachments/assets/ce9c6c71-185f-4b09-80ee-b043d8d40e7a)
+![ubah produk](https://github.com/user-attachments/assets/e13f1f00-d84f-477c-b00e-1d9ebddd952a)
+
 
 setelah diedit:
 ![setelah berhasil edit](https://github.com/user-attachments/assets/99494fe9-2d94-46b0-96a5-a8cf666e400d)
